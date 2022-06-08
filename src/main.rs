@@ -128,7 +128,7 @@ fn display_plugins_db(session : &Session)
 {
   for plugin in session.plugins_db.iter()
   {
-    if plugin.name() != "local" && plugin.name() != "device"
+    if plugin.name() != "local" 
     { eprintln!("\t\t{} : {}", plugin.name(), plugin.help()); }
   }
 }
