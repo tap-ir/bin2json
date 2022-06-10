@@ -5,7 +5,7 @@
 It can take in input a **file**, a **directory** containing different files, a **disk dump**, or a disk **device**. After processing the data, it will export a **json** file containing all the extracted metadata. 
 If a **disk dump** or **device** is provided it will recursively, analyze the partition, the file system, and the different kind of files present on the file system. 
 
-**bin2json** is part of the [TAP](https://github.com/tap-ir/) project  and the file type it support is the same as the tap project. (When new parser plugin is added to [TAP](https://github.com/tap-ir/) **bin2json** is updated to include the new plugins).
+**bin2json** is part of the [TAP](https://github.com/tap-ir/) project and the file type it support is the same as the tap project. (When new parser plugin is added to [TAP](https://github.com/tap-ir/) **bin2json** is updated to include the new plugins).
 
 At time of writting this documentation this is the file type that it support (it can be checked with the **-v** option)
 
@@ -20,7 +20,11 @@ evtx : Parse evtx file
 registry : Parse registry file
 ```
 
-## Compilation 
+## Release binary
+
+Release binary are available [here](https://github.com/tap-ir/bin2json/releases)
+
+## Building 
 
 To compile it you need to have [cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html) installed.
 
@@ -40,7 +44,7 @@ You can also run it directly with cargo, example :
 
 `cargo run --release -- -f file_or_directory_path -o output.json`
 
-### Compilation with device reading feature : 
+### Building with device reading feature : 
 
 To compile it with device reading feature : 
 
@@ -125,3 +129,11 @@ prefetch = ["windows/prefetch"]
 #evtx = ["windows/evtx"]
 #registry = ["windows/registry"]
 ```
+
+## Help
+
+We will answer your questions on [Discord](https://discord.gg/C8UdFG6K)
+
+## License
+
+The contents of this repository is available under Affero GPLv3 license.
