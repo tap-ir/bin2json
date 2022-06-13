@@ -103,7 +103,6 @@ fn usage() -> Arguments
                 registry = ["windows/registry"]
                 "#).unwrap());
 
-  println!("{:?}", config);
   let output = matches.value_of("output").map(|value| value.to_string());
 
   if matches.is_present("file") {
