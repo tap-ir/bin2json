@@ -84,9 +84,9 @@ Usage  :
       -o, --output <OUTPUT>    Output file
 ```
 
-To run bin2json you need to have the file `bin2json.toml` in the same directory than the binary or provide the option (`-c`) `--config` with the path to the configuration file. 
+By default **bin2json** look if a config file named `bin2json.toml` is present in the same directory, you can also provide a config file via the (`-c`) or `--config` argument. If no config file is present **binj2son** will run all available plugins (see section configuration in this `README`). 
 
-the `--file` argument can point to a directory containing different files (collected by a triage tool for example), a single file, or disk a dump
+The `--file` argument can point to a directory containing different files (collected by a triage tool for example), a single file, or disk a dump
 
 
 ### Running with logging information
@@ -130,9 +130,11 @@ prefetch = ["windows/prefetch"]
 #registry = ["windows/registry"]
 ```
 
+If no config file is provided, **bin2json** will run all the plugins.
+
 ## Help
 
-We will answer your questions on [Discord](https://discord.gg/C8UdFG6K)
+Please join our [Discord](https://discord.gg/C8UdFG6K) to ask questions or talk about the project.
 
 ## License
 

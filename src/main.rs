@@ -15,7 +15,7 @@ use serde_json::json;
 use log::warn;
 use clap::{crate_authors, crate_description, crate_name, crate_version, Arg, App, AppSettings};
 
-#[derive(Deserialize,Clone)]
+#[derive(Deserialize,Clone, Debug)]
 struct Config 
 {
   plugins_types : HashMap<String, Vec<String> >,
@@ -88,9 +88,22 @@ fn usage() -> Arguments
     .and_then(|buffer| 
        toml::from_str::<Config>(&buffer)
        .map_err(|err| io::Error::new(io::ErrorKind::Other, err)))
-    .map_err(|err| warn!("Can't read config file: {}", err))
-    .ok().unwrap();
+    .map_err(|err| warn!("Can't read config file: {} using default config", err))
+    .unwrap_or(toml::from_str(
+                r#"
+                [plugins_types]
 
+                ntfs = ["filesystem/ntfs"]
+                mft = ["filesystem/mft"]
+                partition = ["volume/partition"]
+                exif = ["image/jpeg", "image/png", "image/tiff"]
+                lnk = ["windows/lnk"]
+                prefetch = ["windows/prefetch"]
+                evtx = ["windows/evtx"]
+                registry = ["windows/registry"]
+                "#).unwrap());
+
+  println!("{:?}", config);
   let output = matches.value_of("output").map(|value| value.to_string());
 
   if matches.is_present("file") {
