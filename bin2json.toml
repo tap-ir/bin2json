@@ -1,0 +1,10 @@
+[plugins_types]
+
+ntfs = ["filesystem/ntfs"]
+mft = ["filesystem/mft"]
+partition = ["volume/partition"]
+#exif = ["image/jpeg", "image/png", "image/tiff"]
+#lnk = ["windows/lnk"]
+#prefetch = ["windows/prefetch"]
+#evtx = ["windows/evtx"]
+#registry = ["windows/registry"]
