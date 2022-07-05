@@ -35,3 +35,7 @@ toml = "0.5.6"
 
 [features]
 device = ["tap-plugin-device"]
+
+[package.metadata.deb]
+assets = [["bin2json.toml", "etc/", "444"],
+          ["target/release/bin2json", "usr/bin/", "755"]]

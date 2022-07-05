@@ -20,9 +20,15 @@ evtx : Parse evtx file
 registry : Parse registry file
 ```
 
-## Release binary
+## Download & installation 
 
-Release binary are available [here](https://github.com/tap-ir/bin2json/releases)
+Windows binary & Debian/Ubuntu package are available [here](https://github.com/tap-ir/bin2json/releases)
+
+To install in Debian or Ubuntu :
+
+```
+sudo dpkg -i bin2json_0.1.0_amd64.deb 
+```
 
 ## Building 
 
